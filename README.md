@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DocuMate - Document Management System
 
 A comprehensive Flask-based web application for managing personal and family documents with automated expiration reminders via email.
@@ -202,3 +203,6 @@ This project is for educational purposes. Modify and distribute as needed.
 ## Support
 
 For issues or questions, please check the troubleshooting section or create an issue in the repository.
+=======
+# DocuMate-
+>>>>>>> 9d7b168438a4262bb3c6fb095cd192d4baec36fe
