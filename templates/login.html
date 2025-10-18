@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-4 col-md-5 col-sm-6">
+        <div class="auth-card">
+            <div class="card-body">
+                <h3 class="text-center mb-4 profile-heading">
+                    🔑 Login
+                </h3>
+                <form method="POST" action="{{ url_for('login') }}">
+                    <div class="mb-3">
+                        <label for="email" class="form-label fw-bold fst-italic">Email</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label fw-bold fst-italic">Password</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 fw-bold fst-italic">Login</button>
+                </form>
+                <p class="text-center mt-3">
+                    <small>Don’t have an account?
+                        <a href="{{ url_for('register') }}" class="fw-bold fst-italic text-primary">Register</a>
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

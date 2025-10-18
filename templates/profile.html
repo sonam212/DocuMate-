@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-start min-vh-100 py-4">
+    <div class="card p-4 profile-card" style="max-width: 500px; width: 100%;">
+
+    <h3 class="profile-heading mb-4">
+        <i class="bi bi-person-circle"></i>📇 Profile
+    </h3>
+
+
+        <form method="POST" class="profile-form">
+
+            <!-- Username -->
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}" required>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" required>
+            </div>
+
+            <!-- Notification Preferences -->
+            <div class="mb-3">
+                <label class="form-label fw-bold">Notification Preferences</label>
+                <div class="border p-3 rounded">
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="notify_30_days" name="notify_30_days" {% if user_prefs.notify_30_days %}checked{% endif %}>
+                        <label class="form-check-label" for="notify_30_days">Notify 30 days before expiry</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="notify_7_days" name="notify_7_days" {% if user_prefs.notify_7_days %}checked{% endif %}>
+                        <label class="form-check-label" for="notify_7_days">Notify 7 days before expiry</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="notify_1_day" name="notify_1_day" {% if user_prefs.notify_1_day %}checked{% endif %}>
+                        <label class="form-check-label" for="notify_1_day">Notify 1 day before expiry</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="notify_day_of" name="notify_day_of" {% if user_prefs.notify_day_of %}checked{% endif %}>
+                        <label class="form-check-label" for="notify_day_of">Notify on day of expiry</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Change Password Toggle -->
+            <div class="mb-3 text-center">
+                <button type="button" class="btn btn-outline-primary w-100 fw-bold"
+                        onclick="togglePasswordSection()">
+                    🔏 Change Password
+                </button>
+            </div>
+
+            <!-- Hidden Password Section -->
+            <div id="passwordSection" class="password-section">
+                <div class="mb-3">
+                    <label for="current_password" class="form-label">Current Password</label>
+                    <input type="password" class="form-control" id="current_password" name="current_password">
+                </div>
+
+                <div class="mb-3">
+                    <label for="new_password" class="form-label">New Password</label>
+                    <input type="password" class="form-control" id="new_password" name="new_password">
+                </div>
+
+                <div class="mb-3">
+                    <label for="confirm_password" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+                </div>
+            </div>
+
+            <!-- Update Button -->
+            <button type="submit" class="btn btn-primary w-100 fw-bold">Update Profile</button>
+        </form>
+    </div>
+</div>
+
+<!-- Smooth Toggle Script -->
+<script>
+function togglePasswordSection() {
+    let section = document.getElementById("passwordSection");
+    section.classList.toggle("show");
+}
+</script>
+{% endblock %}

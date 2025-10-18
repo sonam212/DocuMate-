@@ -1,0 +1,2 @@
+- [x] Center the profile card horizontally in templates/profile.html for better balance and to eliminate excessive white space on the right.
+- [x] Center the dashboard overview page layout for better balance.

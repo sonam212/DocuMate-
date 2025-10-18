@@ -1,0 +1,9 @@
+EMAIL_ADDRESS=sonamsthakur3@gmail.com
+EMAIL_PASSWORD=flbeotxsanysrbtb
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
+SECRET_KEY=1adbe5d8583e587263158b1499313357e44d8a3d6fa82d52
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=DocuMate@2025!
+DB_NAME=documate

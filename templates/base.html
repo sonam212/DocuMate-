@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title if title else "DocuMate" }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        /* Logo & Title section */
+        .header-top {
+            text-align: center;
+            padding: 20px;
+        }
+        .header-top img {
+            height: 60px;
+            vertical-align: middle;
+        }
+        .header-top .title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #007bff;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .header-top .tagline {
+            font-size: 1em;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #007bff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Page content */
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Flash messages */
+        .flash-messages {
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        .alert {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            text-align: left;
+        }
+        .alert-success { background-color: #d4edda; color: #155724; }
+        .alert-error { background-color: #f8d7da; color: #721c24; }
+        .alert-warning { background-color: #fff3cd; color: #856404; }
+    </style>
+</head>
+<body>
+
+    <!-- Logo + Title -->
+    <div class="header-top">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="DocuMate Logo">
+        <a href="/upload">Upload</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/profile">Profile</a>
+        <a href="/calendar">Calendar</a>
+    </div>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="/upload">Upload</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/profile">Profile</a>
+        <a href="/calendar">Calendar</a>
+    </nav>
+
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <!-- Page content -->
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

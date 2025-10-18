@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}OTP Verification - DocuMate{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8 col-sm-10">
+        <div class="auth-card">
+            <div class="card-body">
+                <h3 class="text-center fw-bold fst-italic text-primary mb-4">
+                    📧 Verify Your Email
+                </h3>
+                <div class="text-center mb-4">
+                    <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                    <p class="text-muted lead">
+                        We've sent a 6-digit verification code to your email address.<br>
+                        Please enter it below to complete your registration.
+                    </p>
+                </div>
+
+                <form method="POST" action="{{ url_for('otp_verify') }}">
+                    <div class="mb-4">
+                        <label for="otp" class="form-label fw-bold">Verification Code</label>
+                        <input type="text" class="form-control form-control-lg text-center border-primary"
+                               id="otp" name="otp" maxlength="6"
+                               placeholder="Enter 6-digit code" required
+                               pattern="[0-9]{6}" title="Please enter a 6-digit number"
+                               style="font-size: 1.2rem; letter-spacing: 0.5rem;">
+                        <div class="form-text text-center mt-2">
+                            <i class="fas fa-clock me-1"></i>The code expires in 10 minutes.
+                        </div>
+                    </div>
+
+                    <div class="d-grid mb-4">
+                        <button type="submit" class="btn btn-primary btn-lg py-3">
+                            <i class="fas fa-check-circle me-2"></i>Verify & Complete Registration
+                        </button>
+                    </div>
+                </form>
+
+                <hr class="my-4">
+
+                <div class="text-center">
+                    <p class="mb-3 text-muted">Didn't receive the code?</p>
+                    <a href="{{ url_for('register') }}" class="btn btn-outline-primary btn-sm px-4">
+                        <i class="fas fa-arrow-left me-1"></i>Back to Registration
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <small class="text-muted">
+                <i class="fas fa-info-circle me-1"></i>Check your spam/junk folder if you don't see the email.
+            </small>
+        </div>
+    </div>
+</div>
+
+<script>
+// Auto-focus the OTP input field
+document.getElementById('otp').focus();
+
+// Optional: Auto-submit when 6 digits are entered
+document.getElementById('otp').addEventListener('input', function(e) {
+    if (this.value.length === 6) {
+        // Optional: auto-submit the form
+        // this.form.submit();
+    }
+});
+</script>
+{% endblock %}

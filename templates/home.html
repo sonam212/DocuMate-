@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h2 class="fw-bold">
+        {% if username %}
+            Welcome to DocuMate, {{ username }}!
+        {% else %}
+            Welcome to DocuMate
+        {% endif %}
+    </h2>
+    <p class="text-muted fs-5">
+        Keep your important documents safe, organized, and always within reach.
+    </p>
+   </div>
+{% endblock %}

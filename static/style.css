@@ -1,0 +1,355 @@
+/* Reset */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background-color: white; /* White background */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0d6efd !important; /* Blue background */
+    padding: 10px 30px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.navbar .nav-link {
+    color: white !important;
+    font-weight: 500;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+/* Hover effect for navbar */
+.navbar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    color: #fff !important;
+}
+
+/* Active link */
+.navbar .nav-link.active {
+    font-weight: bold;
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    flex: 1;
+}
+
+/* Base Card Styling */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex: 1;
+    max-width: 400px;
+}
+
+/* Reusable Hover Effect */
+.card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(13, 110, 253, 0.5); /* Blue glow */
+}
+
+/* Auth + Profile Cards (Login, Register, Profile) */
+.auth-card, .profile-card {
+    border: 2px solid #0d6efd;
+    border-radius: 12px;
+    padding: 25px;
+    min-height: 420px;
+    background: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.auth-card:hover, .profile-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(13, 110, 253, 0.5); /* Same glow everywhere */
+}
+
+/* Profile Heading */
+.profile-heading {
+    font-weight: bold;
+    font-style: italic;
+    color: #0d6efd;
+    text-align: center;
+}
+
+/* Consistent Form Labels */
+.auth-card .form-label,
+.profile-card .form-label {
+    font-weight: bold;
+    font-style: italic;
+    color: black;
+}
+
+/* Password Section Smooth Animation */
+.password-section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+.password-section.show {
+    max-height: 500px;
+}
+
+/* Buttons */
+.btn-primary {
+    margin-top: 20px;
+    padding: 12px;
+    background: linear-gradient(90deg, #0d6efd, #0069ff);
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.btn-primary:hover {
+    background: linear-gradient(90deg, #0056b3, #0044cc);
+}
+
+/* Footer */
+.footer {
+    background: #f5f5f5;
+    text-align: center;
+    padding: 10px;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Highlight today's date */
+.calendar-today {
+    background-color: #0d6efd !important; /* Blue highlight */
+    color: white !important;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+/* Side Menu Button */
+.menu-toggle {
+    background: transparent;
+    border: 2px solid #0d6efd;
+    border-radius: 6px;
+    color: #0d6efd;
+    font-size: 20px;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Blue Glow on Hover */
+.menu-toggle:hover {
+    background: #0d6efd;
+    color: white;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Dropdown Side Menu */
+.side-menu {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: #fff;
+    border: 2px solid #0d6efd;
+    border-radius: 10px;
+    padding: 10px;
+    width: 180px;
+    box-shadow: 0 6px 18px rgba(13, 110, 253, 0.3);
+    display: none;
+    z-index: 1000;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+}
+
+.btn-group-sm .btn {
+    border-radius: 6px;
+    margin: 0 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-group-sm .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.badge {
+    font-size: 0.75em;
+    border-radius: 12px;
+    padding: 4px 8px;
+}
+
+.table-primary {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+}
+
+.table-primary th {
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+}
+
+/* -------------------- */
+/* Preview Page Styling */
+/* -------------------- */
+.premium-card {
+    background: #ffffff;
+    border-radius: 15px;
+    border: 2px solid #0d6efd !important;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3) !important;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0d6efd, #0069ff);
+}
+
+.premium-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(13, 110, 253, 0.4) !important;
+    border-color: #0056b3 !important;
+}
+
+.info-item {
+    border-left: 3px solid #0d6efd;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+}
+
+.info-content {
+    color: #555;
+    margin: 0;
+    line-height: 1.4;
+    max-width: 100%;
+}
+
+.pdf-preview-container {
+    position: relative;
+    background: #f8f9fa;
+    min-height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #0d6efd !important;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
+
+.preview-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(248, 249, 250, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .premium-card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Override Bootstrap form input focus glow */
+input.form-control:focus {
+    border-color: #0d6efd !important; /* Bootstrap primary blue */
+    box-shadow: 0 0 8px rgba(13, 110, 253, 0.5) !important; /* blue glow */
+    outline: none !important;
+
+}
+
+/* Fix for vertical text in headers */
+.card-header h3 {
+    display: inline-block !important;
+    white-space: nowrap !important;
+}
+
+.dashboard-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.dashboard-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.dashboard-stats .col-md-4 {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Add blue border and glow hover to dashboard statistic cards */
+.dashboard-stats .card {
+  border: 2px solid #0d6efd; /* blue border matching theme */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.dashboard-stats .card:hover {
+  box-shadow: 0 6px 18px rgba(13, 110, 253, 0.7); /* stronger blue glow */
+  transform: translateY(-5px);
+}
+
+/* Premium Family Mode Card */
+.premium-card {
+    border: 2px solid #007bff; /* Blue border */
+    transition: all 0.3s ease-in-out;
+}
+.premium-card:hover {
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.6); /* Blue glow */
+    transform: translateY(-5px);
+}
+
+/* Buttons */
+.premium-btn-blue {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 10px 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+.premium-btn-green {
+    background-color: #28a745;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 10px 18px;
+    transition: all 0.3s ease-in-out;
+}

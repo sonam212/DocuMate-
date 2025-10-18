@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DocuMate - Upload a Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="sidebar">
+      <button class="nav-button">Home</button>
+      <button class="nav-button">Login</button>
+      <button class="nav-button">Register</button>
+      <button class="nav-button">Profile</button>
+      <button class="nav-button">Calendar</button>
+    </nav>
+
+    <main class="main-content">
+      <h2>Upload a Document</h2>
+      <form class="upload-form">
+        <label for="file">Select PDF File:</label>
+        <input type="file" id="file" name="file" accept=".pdf" required><br>
+
+        <label for="title">Document Title:</label>
+        <input type="text" id="title" name="title" placeholder="Enter Document Title" required><br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" placeholder="Enter Document Description" required><br>
+
+        <button type="submit" class="upload-button">Upload Document</button>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

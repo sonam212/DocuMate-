@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-start min-vh-100 py-4">
+    <div class="dashboard-container">
+        <div class="card auth-card card-hover p-4">
+        <h2 class="profile-heading mb-4 text-center">📊 Dashboard Overview</h2>
+
+        <div class="row text-center dashboard-stats">
+            <div class="col-md-4 mb-3">
+                <div class="card card-hover shadow-sm p-3">
+                    <h5 class="fw-bold text-primary">🗂️ Total Documents</h5>
+                    <p class="display-4">{{ total_documents }}</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card card-hover shadow-sm p-3">
+                    <h5 class="fw-bold text-warning">⏰ Expiring Soon</h5>
+                    <p class="display-4">{{ expiring_soon }}</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card card-hover shadow-sm p-3">
+                    <h5 class="fw-bold text-danger">⚠️ Expired</h5>
+                    <p class="display-4">{{ expired_documents }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
